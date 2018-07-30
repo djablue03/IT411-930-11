@@ -54,3 +54,8 @@ Route::get('/basic-arithmetic/{basica}/{number1}/{number2}', function ($basica,$
 
     return view('basic-arithmetic',array('basica' => $basica, 'number1' => $number1, 'number2' => $number2));
 })->name('basic-arithmetic');
+
+
+Route::get('/middleware/{age}', function($age){
+	return view('age', array('age'=>$age));
+})->middleware('age');
